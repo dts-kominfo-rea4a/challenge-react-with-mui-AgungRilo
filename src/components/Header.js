@@ -10,9 +10,9 @@ const Header = () => {
   return (
     <>
       <Typography variant="h1" component="h2">
-        Call a Friend
+        call a friend
       </Typography>
-      <Divider>Your friendly contact app</Divider>
+      <Divider>your friendly contact app</Divider>
     </>
   );
 };

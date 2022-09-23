@@ -11,26 +11,35 @@ const style = {
   padding: "10px",
 };
 
+const DetailContact = (props) => {
+  const { name, phone, email } = props;
+
+  return (
+    <>
+      <Box sx={{ marginLeft: "20px" }}>
+        <Typography sx={{ fontWeight: "bold" }}>{name}</Typography>
+        <Typography>{email}</Typography>
+        <Typography>{phone}</Typography>
+      </Box>
+    </>
+  );
+};
+
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 // atau langsung tambahkan dengan sx={{}}
 const Contact = ({ data }) => {
   // Contact berisi foto, nama, telepon, dan email
+
   return (
     <>
       <List sx={style} component="nav" aria-label="mailbox folders">
-        {data && data.map((item, index) => (
-          <Fragment key={index + 1}>
-            <ListItem>
-              <Avatar src={item.photo} alt={item.photo} sx={{ width: 80, height: 80 }} />
-              <Box sx={{ marginLeft: "20px" }}>
-                <Typography sx={{ fontWeight: "bold" }}>{item.name}</Typography>
-                <Typography>{item.email}</Typography>
-                <Typography>{item.phone}</Typography>
-              </Box>
-            </ListItem>
-            <Divider light />
-          </Fragment>
-        ))}
+        <Fragment>
+          <ListItem>
+            <Avatar src={data.photo} alt={data.photo} sx={{ width: 80, height: 80 }} />
+            <DetailContact name={data.name} email={data.email} phone={data.phone} />
+          </ListItem>
+          <Divider light />
+        </Fragment>
       </List>
     </>
   );
