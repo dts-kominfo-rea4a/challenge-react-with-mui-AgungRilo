@@ -18,8 +18,8 @@ const DetailContact = (props) => {
     <>
       <Box sx={{ marginLeft: "20px" }}>
         <Typography sx={{ fontWeight: "bold" }}>{name}</Typography>
-        <Typography>{email}</Typography>
         <Typography>{phone}</Typography>
+        <Typography>{email}</Typography>
       </Box>
     </>
   );
